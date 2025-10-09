@@ -26,6 +26,15 @@ font-size: 16px;
 background-color: #ffff;
 }
 
+/* white border around page */
+main {
+  background-color: #EEF3ED;     
+  margin: 4rem;                  
+  border-radius: 12px;            
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
 
 /* NAV-BAR-STYLING */
 .nav-links {
@@ -112,7 +121,29 @@ header nav {
   font-size: 30px;  
 }
 
+/* FARGEFESTIVAL */
+    .colorfestival{
+      background-color: #EEF3ED;
+      color: #0e0e0e;
+      text-align: center;
+      padding: 4rem 2rem;
+      }
 
+      .colorfestival p {
+  max-width: 800px;          
+  margin: 0 auto;            
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.colorfestival h2{
+   font-family: "Inter", sans-serif;
+  font-size: clamp(24px, 3vw, 36px);
+  margin-bottom: 2rem;
+  color: #0e0e0e;
+}
+
+/* CAROUSEL */
 .promo-cards {
   display: flex;
   gap: 2rem;
@@ -138,10 +169,10 @@ header nav {
 }
 
 .card {
-  flex: 0 0 30%;                 /* 3 kort synlig samtidig */
+  flex: 0 0 30%;                 
   max-width: 30%;
-  min-width: 280px;              /* sikrer fornuftig størrelse */
-  height: 380px;                 /* høyde som passer designet ditt */
+  min-width: 280px;              
+  height: 380px;                 
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -251,6 +282,161 @@ header nav {
 
   .arrow.left,
   .arrow.right {
-    display: none; /* skjul piler på små skjermer */
+    display: none; /* hide arrow*/
   }
+}
+
+/* VIDEO */
+    .video-section{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      flex-wrap: nowrap;
+      filter: sepia(20%) opacity(80%) ;
+    }
+
+ .video-section video {
+  flex: 1 1 50%; 
+  max-width: 50%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.video-section2{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      flex-wrap: nowrap;
+      filter: sepia(20%) opacity(80%) ;
+    }
+    .video-section2 video {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* OPPLEV CRAFTSVILLA */
+    .opplev-c{
+      background-color: #EEF3ED;
+      color: #0e0e0e;
+      text-align: center;
+      padding: 4rem 2rem;
+      }
+
+      .opplev-c p{
+  max-width: 800px;          
+  margin: 0 auto;            
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.opplev-c h2{
+   font-family: "Inter", sans-serif;
+  font-size: clamp(24px, 3vw, 36px);
+  margin-bottom: 2rem;
+  color: #0e0e0e;
+}
+
+/* BESTILL KURS-BILDE */
+.kursbilder {
+width: 100%;
+height: 180px; 
+overflow: hidden; 
+}
+
+.kursbilder img {
+   width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+
+/* BESTILL KURS SEKSJON */
+.kursbilder-content {
+  position: relative;
+  background-image: url('./pictures/kursbilde3.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 6rem 2rem;       
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.order-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); 
+  z-index: 1;
+}
+
+.order-content {
+  position: relative;
+  z-index: 2; /* sørger for at teksten ligger over overlay */
+  max-width: 700px; /* begrenser linjelengde for lesbarhet */
+}
+
+.order-content h2 {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(21px, 4vw, 32px);
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.order-content p {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(14px, 2.5vw, 24px);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.order-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(18, 18, 18);
+  background-color: #c9aead;
+  border-radius: 45px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.order-button:hover {
+  background-color: #EEF3ED; 
+  transform: translateY(-2px);
+}
+
+
+
+/* FOOTER */
+footer{
+ background-color: #C7B8B7;
+      color: #0b0a0a;
+      text-align: center;
+      padding: 4rem 2rem;
+}
+
+footer a {
+  color: #0e0e0e;           
+  text-decoration: none;    
+}
+
+footer a:hover {
+  text-decoration: underline; 
+  color: #255647;             
 }
