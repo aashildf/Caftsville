@@ -1,0 +1,552 @@
+ /* GENERELT */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+
+.babylonica-regular {
+  font-family: "Babylonica", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.inter-craft-font {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+body{
+margin: 0;
+font-family: "Inter", sans-serif;
+font-size: 16px;
+background-color: #ffff;
+}
+
+/* white border around page */
+main {
+  background-color: #EEF3ED;     
+  margin: 4rem;                  
+  border-radius: 12px;            
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+
+
+/* NAV-BAR-STYLING */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 5rem; 
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0e0e0e;
+  font-weight: 500;
+  position: relative; 
+  padding: 0.2rem 0;  
+  transition: color 0.3s ease;
+}
+
+/* Line when hover */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;              
+  width: 0;
+  background-color: #C7B8B7;
+  transition: width 0.3s ease;
+}
+
+/* hover link */
+.nav-links a:hover::after,
+.nav-links a:focus::after {
+  width: 100%;              /* line glide */
+}
+
+/* txt color change when hover */
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #045f42;           
+}
+
+
+
+/* HEADER */
+header{
+      background-color: #EEF3ED;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;  
+      position: relative;
+      z-index: 10;
+}
+
+header nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+/*HERO LOGO  */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-texts {
+  position: absolute;
+  top: 50%;             /* center txt */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 1rem;             
+  text-align: center;
+  z-index: 10;
+}
+
+@keyframes moveText {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.hero-logo {
+  font-family: "Babylonica", cursive;
+  /* font-size: 100px; */
+  font-size: clamp(50px, 8vw, 120px);
+ color: black;  
+  text-shadow: 2px 2px 9px rgba(255, 255, 255, 0.9);
+}
+
+.hero-txt {
+  font-family: "Babylonica", cursive;
+  font-size: clamp(24px, 4vw, 72px);
+  animation: moveText 12s linear infinite;
+  color: rgb(25, 24, 24);
+  text-shadow: 2px 2px 9px rgba(255, 255, 255, 0.9);
+}
+
+
+/* SITAT */
+    .quote{
+      background-color: #EEF3ED;
+      color: #0e0e0e;
+      text-align: center;
+      padding: 4rem 2rem;
+      }
+
+      .quote p {
+  max-width: 800px;          
+  margin: 0 auto;            
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Craftsvilla-logoen i Babylonica */
+.brand{
+  font-family: "Babylonica", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;  
+}
+      
+
+/* VIDEO */
+    .video{
+      display: flex;
+      align-items: center;
+      object-fit: cover;
+      padding: 20px;
+      filter: sepia(20%) opacity(80%) ;
+    }
+
+    .video-container {
+  display: flex;
+  justify-content: center; /* Senter horisontaly */
+  align-items: center;     /* Senter verticaly*/
+  background: #EEF3ED;      
+}
+
+/* KURS-CAROUSEL */
+.promo-cards {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  overflow-x: auto;            /*  horisontal scroll */
+  scroll-behavior: smooth;
+  flex-wrap: nowrap !important;/* sørg for at det IKKE brytes til flere linjer */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.promo-cards::-webkit-scrollbar {
+  height: 8px;                   /* scrollbar-høyde */
+}
+
+.promo-cards::-webkit-scrollbar-thumb {
+  background-color: #C7B8B7;
+  border-radius: 10px;
+}
+
+.promo-cards::-webkit-scrollbar-track {
+  background-color: #EEF3ED;
+}
+
+.card {
+  flex: 0 0 30%;                 /* 3 kort synlig samtidig */
+  max-width: 30%;
+  min-width: 280px;              /* sikrer fornuftig størrelse */
+  height: 380px;                 /* høyde som passer designet ditt */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  background-color: white;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.carousel-section {
+  background-color: #EEF3ED;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.carousel-section h2 {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(24px, 3vw, 36px);
+  margin-bottom: 2rem;
+  color: #0e0e0e;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CARD-ROW */
+.promo-cards {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  flex-wrap: nowrap;
+  width: 80%;
+  padding: 1rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: #C7B8B7 #EEF3ED;
+}
+
+/* CARDS */
+.card {
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
+  min-width: 280px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* ARROWS */
+.arrow {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.arrow:hover {
+  color: #045f42;
+  transform: scale(1.2);
+}
+
+.arrow.left {
+  position: absolute;
+  left: 2rem;
+}
+
+.arrow.right {
+  position: absolute;
+  right: 2rem;
+}
+
+/* responsiv */
+@media (max-width: 800px) {
+  .card {
+    flex: 0 0 70%;
+    max-width: 70%;
+  }
+
+  .arrow.left,
+  .arrow.right {
+    display: none; /* hide arrow on small screen */
+  }
+}
+
+
+
+.vårekurs {
+width: 100%;
+height: 180px; 
+overflow: hidden; 
+}
+
+.vårekurs img {
+   width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+/* ---------------WHY-SECTION*/
+.why{
+  display: flex;             
+  justify-content: center;    /* center horisontally */
+  align-items: center;        /* center vertikally */
+  margin-top: 3rem;
+  margin-bottom: 1rem;            
+  text-align: center; 
+}
+
+.why-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;    
+  gap: 20px;         
+  padding: 2rem;    
+  margin-bottom: 3rem; 
+}
+
+/* the card */
+.why-c {
+  flex: 1 1 calc(25% - 15px);  /* 4 same size, some gap */
+  max-width: 25%;
+  perspective: 1000px; /* 3D-effect */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  height: 600px;
+}
+
+.why-c:hover {
+  transform: translateY(-5px);
+}
+
+/* in card */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+/* Når kortet er klikket -> snu det */
+.why-c.clicked .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Glød når kortet er snudd */
+.why-c.clicked .card-back {
+  box-shadow: 0 0 25px rgba(242, 245, 186, 0.979); /* oransjeaktig glød */
+  border: 2px solid #CEE1AC
+}
+
+/* front/back */
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+/* front with image */
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-front:hover img {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* backside w txt */
+.card-back {
+  background-color: #fff;
+  color: #333;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-back h3 {
+  margin-bottom: 0.8rem;
+  color: #222;
+  font-size: 1.2rem;
+}
+
+/*   Responsive design         */
+@media (max-width: 900px) {
+  .why-c {
+    flex: 1 1 calc(50% - 10px);
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .why-c {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+
+
+/* klar for å komme i gang-section */
+.cta-section {
+  position: relative;
+  background-image: url('./pictures/painting-floor.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 6rem 2rem;       
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); 
+  z-index: 1;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2; /* sørger for at teksten ligger over overlay */
+  max-width: 700px; /* begrenser linjelengde for lesbarhet */
+}
+
+.cta-content h2 {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(21px, 4vw, 32px);
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.cta-content p {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(14px, 2.5vw, 24px);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  color: rgb(18, 18, 18);
+  background-color: #c9aead;
+  border-radius: 45px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #EEF3ED; 
+  transform: translateY(-2px);
+}
+
+/* FOOTER */
+footer{
+ background-color: #C7B8B7;
+      color: #0b0a0a;
+      text-align: center;
+      padding: 4rem 2rem;
+}
+
+footer a {
+  color: #0e0e0e;           
+  text-decoration: none;    
+}
+
+footer a:hover {
+  text-decoration: underline; 
+  color: #255647;             
+}
+
